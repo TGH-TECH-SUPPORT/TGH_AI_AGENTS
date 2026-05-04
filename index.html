@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boomi Embed Kit | Test Harness</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://assets.manywho.com/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="https://assets.manywho.com/js/vendor/bootstrap-3.3.6.min.js"></script>
+    <script src="https://assets.manywho.com/js/vendor/react-0.14.6.min.js"></script>
+    <script src="https://assets.manywho.com/js/vendor/react-dom-0.14.6.min.js"></script>
+    <script src="https://assets.manywho.com/js/vendor/socket.io-1.4.5.js"></script>
+    
+    <script src="https://flow.boomi.com/js/flow-ui-bootstrap.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="config-panel">
+            <h2>Boomi Embed Config</h2>
+            <p>Enter your tenant and flow details to initialize the engine.</p>
+            
+            <form id="embedForm">
+                <div class="form-group">
+                    <label for="tenantId">Tenant ID</label>
+                    <input type="text" id="tenantId" placeholder="e.g., 12345678-abcd-..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="flowId">Flow ID</label>
+                    <input type="text" id="flowId" placeholder="e.g., 87654321-dcba-..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="versionId">Version ID (Optional)</label>
+                    <input type="text" id="versionId" placeholder="Leave blank for default">
+                </div>
+
+                <button type="submit" class="primary-btn">Initialize Embed</button>
+                <button type="button" id="clearBtn" class="secondary-btn">Clear Container</button>
+            </form>
+        </aside>
+
+        <main class="preview-panel">
+            <div class="preview-header">
+                <h3>Live Preview</h3>
+                <span id="statusBadge" class="badge idle">Status: Idle</span>
+            </div>
+            
+            <div id="manywho" class="boomi-container">
+                <div class="placeholder-text">The embedded UI will render here.</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
