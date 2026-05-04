@@ -1,0 +1,151 @@
+:root {
+    --bg-color: #0f1115;
+    --panel-bg: #1a1d24;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --border: #2dd4bf; /* Boomi Teal nod */
+    --border-light: #334155;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Configuration Panel */
+.config-panel {
+    width: 350px;
+    background-color: var(--panel-bg);
+    padding: 2rem;
+    border-right: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.config-panel h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--border);
+}
+
+.config-panel p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-family: monospace;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--border);
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 0.75rem;
+}
+
+.primary-btn {
+    background-color: var(--accent);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+}
+
+.secondary-btn:hover {
+    background-color: var(--border-light);
+}
+
+/* Preview Panel */
+.preview-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge.idle { background-color: #334155; color: #cbd5e1; }
+.badge.active { background-color: #064e3b; color: #34d399; }
+
+.boomi-container {
+    flex: 1;
+    background-color: white; /* Keep white for actual UI contrast */
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #94a3b8;
+    font-weight: 500;
+}
